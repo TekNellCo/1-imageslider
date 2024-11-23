@@ -1,5 +1,6 @@
 let leftBtn = document.querySelector('.leftButton');
 let rightBtn = document.querySelector('.rightButton');
+let btn = document.querySelectorAll('.btn');
 let quoteContainerMain = document.querySelector('.quoteContainerMain');
 let mid = document.querySelector('.mid');
 let right = document.querySelector('.right');
@@ -11,52 +12,80 @@ objectArray = [
   {
     img: './images/tonysoprano.webp',
     quote: '“Even a broken clock is right twice a day.” \nTony Soprano',
+    bg: 'url(./images/backgrounds/sopranosbg.webp)',
   },
   {
     img: './images/nuckythomson.webp',
     quote: `"The beginning's over. The end hasn't come yet. All I care about is now." \nEnoch Nucky Thomson`,
+    bg: 'url(./images/backgrounds/boardwalkbg.webp)',
   },
   {
     img: './images/saulgoodman.webp',
     quote: `"Perfection Is The Enemy Of Perfectly Adequate." \nSaul Goodman`,
+    bg: 'url(./images/backgrounds/saulbg.webp)',
   },
   {
     img: './images/franklin.webp',
     quote: `"The Pentagon spends 250 Billion a year on Defense but you needed my pocket change!!!"  \nFranklin`,
+    bg: 'url(./images/backgrounds/snowfallbg.webp)',
   },
   {
     img: './images/stevemurphy.webp',
     quote: `"Nothing gives the fearful more courage than another's fear." \nSteve Murphy`,
+    bg: 'url(./images/backgrounds/narcosbg.webp)',
   },
 ];
+// btn.forEach(button, () => {
+//   button.addEventListener('click', () => {
+//     button.classList.add('clicked');
+
+//     setTimeout(() => {
+//       button.classList.remove('clicked');
+//     }, 1000);
+//   });
+// });
 
 leftBtn.addEventListener('click', () => {
+  leftBtn.classList.add('clicked');
+
+  setTimeout(() => {
+    leftBtn.classList.remove('clicked');
+  }, 100);
   if (originalQuote) {
     originalQuote.className = 'left';
     setTimeout(() => {
       originalQuote.remove();
     }, 550);
   }
+
   quoteContainerMain.lastChild.className = 'left';
   removeLeft();
   direction = 'left';
   let image;
   let quote;
+  let bg;
   if (currentQuote === 0) {
     currentQuote = 4;
     image = objectArray[currentQuote].img;
     quote = objectArray[currentQuote].quote;
-    createQuote(image, quote);
+    bg = objectArray[currentQuote].bg;
+    createQuote(image, quote, bg);
     console.log(currentQuote);
   } else {
     --currentQuote;
     image = objectArray[currentQuote].img;
     quote = objectArray[currentQuote].quote;
-    createQuote(image, quote);
+    bg = objectArray[currentQuote].bg;
+    createQuote(image, quote, bg);
   }
 });
 
 rightBtn.addEventListener('click', () => {
+  rightBtn.classList.add('clicked');
+
+  setTimeout(() => {
+    rightBtn.classList.remove('clicked');
+  }, 100);
   if (originalQuote) {
     originalQuote.className = 'right';
     setTimeout(() => {
@@ -68,21 +97,25 @@ rightBtn.addEventListener('click', () => {
   direction = 'right';
   let image;
   let quote;
+  let bg;
   if (currentQuote === 4) {
     currentQuote = 0;
     image = objectArray[currentQuote].img;
     quote = objectArray[currentQuote].quote;
-    createQuote(image, quote);
+    bg = objectArray[currentQuote].bg;
+    createQuote(image, quote, bg);
     console.log(currentQuote);
   } else {
     ++currentQuote;
     image = objectArray[currentQuote].img;
     quote = objectArray[currentQuote].quote;
-    createQuote(image, quote);
+    bg = objectArray[currentQuote].bg;
+
+    createQuote(image, quote, bg);
   }
 });
 
-function createQuote(image, quote) {
+function createQuote(image, quote, bg) {
   console.log(quote);
   let divMid = document.createElement('div');
   let imgMid = document.createElement('img');
@@ -98,7 +131,7 @@ function createQuote(image, quote) {
       divMid.className = 'mid';
     });
   }
-
+  divMid.style.cssText = `background-image : ${bg}`;
   quoteMid.className = 'quote';
   imgMid.src = image;
   quoteMid.textContent = quote;

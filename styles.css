@@ -4,25 +4,39 @@
   box-sizing: border-box;
   margin: 0px;
   padding: 0px;
-  outline: 1px solid red;
+  /* outline: 1px solid red; */
 }
 body {
+  background-image: url(./images/backgrounds/background.webp);
+  background-size: contain;
+  background-color: rgb(49, 49, 49);
   height: 100svh;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 1%;
+  font-family: 'Caveat', cursive;
 }
 .btn {
+  color: white;
+  cursor: pointer;
   font-size: 5rem;
+  transition: ease-in;
+  user-select: none;
+}
+.clicked {
+  font-size: 4.6rem;
+  color: red;
 }
 .mainContainer {
+  box-shadow: inset 0px 0px 8px rgb(18, 18, 18);
   overflow: hidden;
   width: 40%;
   height: 40%;
   display: flex;
   justify-content: center;
   align-items: center;
+  background: linear-gradient(#2f2f38, #181620);
 }
 
 /* .quoteContainerMain {
@@ -41,6 +55,10 @@ body {
   height: 54%;
 }
 .mid {
+  color: white;
+
+  background-image: url(./images/backgrounds/sopranosbg.webp);
+  background-size: cover;
   justify-content: center;
   align-items: center;
   padding: 10%;
@@ -57,6 +75,7 @@ body {
     left: 43%;
   }
   p {
+    background-color: rgba(41, 41, 41, 0.836);
     white-space: pre-line;
     margin-top: 2%;
     text-align: center;
@@ -66,6 +85,7 @@ body {
 .left {
   z-index: 1;
   transform: translate(-120%);
+  background-size: cover;
   justify-content: center;
   align-items: center;
   padding: 10%;
@@ -82,6 +102,7 @@ body {
     left: 43%;
   }
   p {
+    background-color: rgba(41, 41, 41, 0.836);
     white-space: pre-line;
     margin-top: 2%;
     text-align: center;
@@ -91,6 +112,7 @@ body {
 .right {
   z-index: 1;
   transform: translate(120%);
+  background-size: cover;
   justify-content: center;
   align-items: center;
   padding: 10%;
@@ -107,6 +129,7 @@ body {
     left: 43%;
   }
   p {
+    background-color: rgba(41, 41, 41, 0.836);
     white-space: pre-line;
     margin-top: 2%;
     text-align: center;
