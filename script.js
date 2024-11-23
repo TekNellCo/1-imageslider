@@ -21,12 +21,12 @@ objectArray = [
   },
   {
     img: './images/saulgoodman.webp',
-    quote: `"Perfection Is The Enemy Of Perfectly Adequate." \nSaul Goodman`,
+    quote: `"Perfection is the enemy of perfectly adequate." \nSaul Goodman`,
     bg: 'url(./images/backgrounds/saulbg.webp)',
   },
   {
     img: './images/franklin.webp',
-    quote: `"The Pentagon spends 250 Billion a year on Defense but you needed my pocket change!!!"  \nFranklin`,
+    quote: `"The Pentagon spends 250 Billion a year on defense but you needed my pocket change?!"  \nFranklin`,
     bg: 'url(./images/backgrounds/snowfallbg.webp)',
   },
   {
@@ -34,22 +34,23 @@ objectArray = [
     quote: `"Nothing gives the fearful more courage than another's fear." \nSteve Murphy`,
     bg: 'url(./images/backgrounds/narcosbg.webp)',
   },
+  {
+    img: './images/penguin.webp',
+    quote: `"How's anyone supposed to know your worth unless you tell 'em, huh?"  \nOz Cobb`,
+    bg: 'url(./images/backgrounds/penguinbg.webp)',
+  },
+  {
+    img: './images/gennaro.webp',
+    quote: `"Nasty thing, fear. If you can't manage it, it gets dangerous, you lose your mental clarity. It takes practice to manage fear."  \nGennaro Savastano`,
+    bg: 'url(./images/backgrounds/gommorahbg.webp)',
+  },
 ];
-// btn.forEach(button, () => {
-//   button.addEventListener('click', () => {
-//     button.classList.add('clicked');
 
-//     setTimeout(() => {
-//       button.classList.remove('clicked');
-//     }, 1000);
-//   });
-// });
-
-leftBtn.addEventListener('click', () => {
-  leftBtn.classList.add('clicked');
+rightBtn.addEventListener('click', () => {
+  rightBtn.classList.add('clicked');
 
   setTimeout(() => {
-    leftBtn.classList.remove('clicked');
+    rightBtn.classList.remove('clicked');
   }, 100);
   if (originalQuote) {
     originalQuote.className = 'left';
@@ -65,7 +66,7 @@ leftBtn.addEventListener('click', () => {
   let quote;
   let bg;
   if (currentQuote === 0) {
-    currentQuote = 4;
+    currentQuote = 6;
     image = objectArray[currentQuote].img;
     quote = objectArray[currentQuote].quote;
     bg = objectArray[currentQuote].bg;
@@ -80,11 +81,11 @@ leftBtn.addEventListener('click', () => {
   }
 });
 
-rightBtn.addEventListener('click', () => {
-  rightBtn.classList.add('clicked');
+leftBtn.addEventListener('click', () => {
+  leftBtn.classList.add('clicked');
 
   setTimeout(() => {
-    rightBtn.classList.remove('clicked');
+    leftBtn.classList.remove('clicked');
   }, 100);
   if (originalQuote) {
     originalQuote.className = 'right';
@@ -98,7 +99,7 @@ rightBtn.addEventListener('click', () => {
   let image;
   let quote;
   let bg;
-  if (currentQuote === 4) {
+  if (currentQuote === 6) {
     currentQuote = 0;
     image = objectArray[currentQuote].img;
     quote = objectArray[currentQuote].quote;
@@ -143,13 +144,13 @@ function createQuote(image, quote, bg) {
 function removeLeft() {
   setTimeout(() => {
     let leftClass = document.querySelector('.left');
-    leftClass.remove();
+    leftClass ? leftClass.remove() : null;
   }, 2000);
 }
 
 function removeRight() {
   setTimeout(() => {
     let rightClass = document.querySelector('.right');
-    rightClass.remove();
+    rightClass ? rightClass.remove() : null;
   }, 2000);
 }
