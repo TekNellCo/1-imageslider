@@ -55,7 +55,7 @@ leftBtn.addEventListener('click', () => {
     originalQuote.className = 'left';
     setTimeout(() => {
       originalQuote.remove();
-    }, 550);
+    }, 100);
   }
 
   quoteContainerMain.lastChild.className = 'left';
@@ -90,7 +90,7 @@ rightBtn.addEventListener('click', () => {
     originalQuote.className = 'right';
     setTimeout(() => {
       originalQuote.remove();
-    }, 550);
+    }, 100);
   }
   quoteContainerMain.lastChild.className = 'right';
   removeRight();

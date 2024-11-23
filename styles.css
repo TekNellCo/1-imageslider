@@ -136,3 +136,57 @@ body {
     font-size: 1.8rem;
   }
 }
+
+@media (max-width: 1000px) {
+  .mainContainer {
+    /* flex-direction: column; */
+    width: 70%;
+    height: 90%;
+  }
+  .quoteContainerMain {
+    height: 100%;
+    width: 100%;
+  }
+  .mid {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    background-size: contain;
+    img {
+      height: 30%;
+      left: 16%;
+      top: 0%;
+    }
+    p {
+      background-color: rgba(31, 30, 30, 0.904);
+    }
+  }
+  .left {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    background-size: contain;
+    img {
+      height: 30%;
+      left: 16%;
+      top: 0%;
+    }
+    p {
+      background-color: rgba(31, 30, 30, 0.904);
+    }
+  }
+  .right {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    background-size: contain;
+    img {
+      height: 30%;
+      left: 16%;
+      top: 0%;
+    }
+    p {
+      background-color: rgba(31, 30, 30, 0.904);
+    }
+  }
+}
