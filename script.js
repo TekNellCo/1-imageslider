@@ -3,6 +3,7 @@ let rightBtn = document.querySelector('.rightButton');
 let quoteContainerMain = document.querySelector('.quoteContainerMain');
 let mid = document.querySelector('.mid');
 let right = document.querySelector('.right');
+let originalQuote = document.querySelector('.original');
 let currentQuote = 0;
 let direction;
 
@@ -30,6 +31,12 @@ objectArray = [
 ];
 
 leftBtn.addEventListener('click', () => {
+  if (originalQuote) {
+    originalQuote.className = 'left';
+    setTimeout(() => {
+      originalQuote.remove();
+    }, 550);
+  }
   quoteContainerMain.lastChild.className = 'left';
   removeLeft();
   direction = 'left';
@@ -50,6 +57,12 @@ leftBtn.addEventListener('click', () => {
 });
 
 rightBtn.addEventListener('click', () => {
+  if (originalQuote) {
+    originalQuote.className = 'right';
+    setTimeout(() => {
+      originalQuote.remove();
+    }, 550);
+  }
   quoteContainerMain.lastChild.className = 'right';
   removeRight();
   direction = 'right';
