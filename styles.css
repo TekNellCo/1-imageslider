@@ -152,12 +152,17 @@ body {
     height: 100%;
     width: 100%;
     background-size: contain;
+    /* justify-content: center;
+    align-content: center; */
     img {
       height: 30%;
-      left: 16%;
+      /* left: 9%; */
       top: 0%;
+      left: 50%;
+      transform: translate(-50%, 0%);
     }
     p {
+      margin-top: 24%;
       background-color: rgba(31, 30, 30, 0.904);
     }
   }
@@ -168,10 +173,12 @@ body {
     background-size: contain;
     img {
       height: 30%;
-      left: 16%;
       top: 0%;
+      left: 50%;
+      transform: translate(-50%, 0%);
     }
     p {
+      margin-top: 24%;
       background-color: rgba(31, 30, 30, 0.904);
     }
   }
@@ -182,10 +189,12 @@ body {
     background-size: contain;
     img {
       height: 30%;
-      left: 16%;
       top: 0%;
+      left: 50%;
+      transform: translate(-50%, 0%);
     }
     p {
+      margin-top: 24%;
       background-color: rgba(31, 30, 30, 0.904);
     }
   }
