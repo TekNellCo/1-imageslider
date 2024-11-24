@@ -36,7 +36,7 @@ objectArray = [
   },
   {
     img: './images/penguin.webp',
-    quote: `"How's anyone supposed to know your worth unless you tell 'em, huh?"  \nOz Cobb`,
+    quote: `"How's anyone supposed to know your worth unless you tell 'em, huh?"  \nOswald Cobb`,
     bg: 'url(./images/backgrounds/penguinbg.webp)',
   },
   {
